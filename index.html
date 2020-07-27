@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://kit.fontawesome.com/df216a16d4.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="style.css">
+    <title>Document</title>
+</head>
+<body>
+    
+<div class="main-visual">
+<img src="img/agatha-depine-IRMOsZtP4-8-unsplash.jpg">
+</div>
+
+<div class="white-back"><img src="img/Zs..png"></div>
+<div class="container-button">
+    <a href="#" class="btn-open">Check New Item</a>
+    </div>
+
+    
+    <nav>
+        <ul>
+        <li class=”current”><a href=”#”>Home</a></li>
+        <li><a href=”#”>skin</a></li>
+        <li><a href=”#”>lip</a></li>
+        <li><a href=”#”>eye</a></li>
+        <li><a href=”#”>contact</a></li>
+        </ul>
+    </nav>
+
+    <nav>
+        <ul>
+        <li class=”current”><a href=”#”><img src="img/sydney-opera-house.png"></a></li>
+        <li><a href=”#”><img src="img/makeup.png"></a></li>
+        <li><a href=”#”><img src="img/lipstick.png"></a></li>
+        <li><a href=”#”><img src="img/makeup (1).png"></a></li>
+        <li><a href=”#”><img src="img/edit.png"></a></li>
+        </ul>
+    </nav>
+
+<div class="rank">Weekly Ranking</div>
+<div class="lip-name">大英博物館クレオパトラ#301</div>
+<div class="rank-visual"><img src="img/jean-philippe-delberghe-75xPHEQBmvA-unsplash.jpg"></div>
+<div class="rank-box">
+<div class="rank-visual1"> 
+<img src="img/アセット 14mdpi.png">
+<img src="img/これらの休日メイクルックスは上のポイント今年のクリスマスを見たい人のための完璧なことを行っています！ここではいくつかの最高のです！.jpg">
+</div>
+
+<div class="rank-visual2"> 
+    <div class="eye-name1">ピカソインスピレーション#201</div>
+    <img src="img/Pin on woman.jpg">
+    <img src="img/アセット 13mdpi.png">
+ </div>
+</div>
+
+  <div class="new-item">
+   New Item
+  </div>
+<div id="wrapper">      
+    <div id="slider-wrap">
+        <ul id="slider">
+           <li data-color="#1abc9c">
+              <i class="image"><img src="img/アセット 18mdpi.png"></i>
+           </li>
+           
+           <li data-color="#3498db">
+              <i class="image"><img src="img/アセット 19mdpi.png"></i>
+           </li>
+           
+        </ul>
+        
+         <!--controls-->
+        <div class="btns" id="next"><i class="fa fa-arrow-right"></i></div>
+        <div class="btns" id="previous"><i class="fa fa-arrow-left"></i></div>
+        <div id="counter"></div>
+        
+        <div id="pagination-wrap">
+          <ul>
+          </ul>
+        </div>
+        <!--controls-->    
+               
+    </div>
+
+ </div>
+<!-- / slideshow -->
+
+<div class="new-p">新作は美術絵画とコラボした限定パッケージ。天使のような白肌ファンデーションと発色豊かな
+    アイシャドウはゲット必須です。
+</div>
+
+<div class="sale">
+    <img src="img/アセット 15mdpi.png">
+</div>
+
+<div class="contents">
+    <ul class="cp_snslink01">
+    <li class="cp_link facebook"><a href="#"><i class="fab fa-facebook-f fa-2x"></i>
+    <div class="nav-label"><span>facebook Button</span></div></a>
+    </li>
+    <li class="cp_link twitter"><a href="#"><i class="fab fa-twitter fa-2x"></i>
+    <div class="nav-label"><span>twitter Button</span></div></a>
+    </li>
+    <li class="cp_link google"><a href="#"><i class="fab fa-google-plus-g fa-2x"></i>
+    <div class="nav-label"><span>google+ Button</span></div></a>
+    </li>
+    <li class="cp_link instagram"><a href="#"><i class="fab fa-instagram fa-2x"></i>
+    <div class="nav-label"><span>instagram Button</span></div></a>
+    </li>
+    </ul>
+    </div>
+    
+
+
+
+
+<div class="footer">
+    <img src="img/footer.jpg">
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+<script type="text/javascript">
+    //current position
+    var pos = 0;
+    //number of slides
+    var totalSlides = $('#slider-wrap ul li').length;
+    //get the slide width
+    var sliderWidth = $('#slider-wrap').width();
+    
+    
+    $(document).ready(function(){
+        
+        
+        /*****************
+         BUILD THE SLIDER
+        *****************/
+        //set width to be 'x' times the number of slides
+        $('#slider-wrap ul#slider').width(sliderWidth*totalSlides);
+        
+        //next slide    
+        $('#next').click(function(){
+            slideRight();
+        });
+        
+        //previous slide
+        $('#previous').click(function(){
+            slideLeft();
+        });
+        
+        
+        
+        /*************************
+         //*> OPTIONAL SETTINGS
+        ************************/
+        //automatic slider
+        var autoSlider = setInterval(slideRight, 3000);
+        
+        //for each slide 
+        $.each($('#slider-wrap ul li'), function() { 
+           //set its color
+           var c = $(this).attr("data-color");
+           $(this).css("background",c);
+           
+           //create a pagination
+           var li = document.createElement('li');
+           $('#pagination-wrap ul').append(li);    
+        });
+        
+        //counter
+        countSlides();
+        
+        //pagination
+        pagination();
+        
+        //hide/show controls/btns when hover
+        //pause automatic slide when hover
+        $('#slider-wrap').hover(
+          function(){ $(this).addClass('active'); clearInterval(autoSlider); }, 
+          function(){ $(this).removeClass('active'); autoSlider = setInterval(slideRight, 3000); }
+        );
+        
+        
+    
+    });//DOCUMENT READY
+        
+    
+    
+    /***********
+     SLIDE LEFT
+    ************/
+    function slideLeft(){
+        pos--;
+        if(pos==-1){ pos = totalSlides-1; }
+        $('#slider-wrap ul#slider').css('left', -(sliderWidth*pos));    
+        
+        //*> optional
+        countSlides();
+        pagination();
+    }
+    
+    
+    /************
+     SLIDE RIGHT
+    *************/
+    function slideRight(){
+        pos++;
+        if(pos==totalSlides){ pos = 0; }
+        $('#slider-wrap ul#slider').css('left', -(sliderWidth*pos)); 
+        
+        //*> optional 
+        countSlides();
+        pagination();
+    }
+    
+    
+    
+        
+    /************************
+     //*> OPTIONAL SETTINGS
+    ************************/
+    function countSlides(){
+        $('#counter').html(pos+1 + ' / ' + totalSlides);
+    }
+    
+    function pagination(){
+        $('#pagination-wrap ul li').removeClass('active');
+        $('#pagination-wrap ul li:eq('+pos+')').addClass('active');
+    }
+            
+      
+         
+           
+    </script>
+</body>
+</html>
