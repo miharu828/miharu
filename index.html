@@ -1,14 +1,26 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<html lang="ja">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1, user-scalable=0">
+
+    <title>miharu-portfolio</title>
+    <!-- BootstrapのCSS読み込み -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <!-- jQuery読み込み -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
     <script src="https://kit.fontawesome.com/df216a16d4.js" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="style.css">
-    <title>Document</title>
+    <!-- BootstrapのJS読み込み -->
+    <script src="js/bootstrap.min.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Rowdies&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">  
+    <link rel="stylesheet" href="phone.css" type="text/css" media="screen and (max-width: 768px)"> 
 </head>
 <body>
+
+
+    
     
 <div class="main-visual">
 <img src="https://miharu828.github.io/miharu/agatha-depine-IRMOsZtP4-8-unsplash.jpg">
@@ -20,27 +32,63 @@
     <a href="#" class="btn-open">Check New Item</a>
     </div>
 
+     <header id="top-head">
+                    <div class="inner">
+                        <div id="mobile-head">
+                            <h1 class="logo">Logo</h1>
+                            <div id="nav-toggle">
+                                <div>
+                                    <span></span>
+                                    <span></span>
+                                    <span></span>
+                                </div>
+                            </div>
+                        </div>
+                        <nav id="global-nav">
+                            <ul>
+                                <li><a href="#">HOME</a></li>
+                                <li><a href="#">PRODUCT</a></li>
+                                <li><a href="#">WORKS</a></li>
+                                <li><a href="#">COMPANY</a></li>
+                                <li><a href="#">CONTACT</a></li>
+                            </ul>
+                        </nav>
+                    </div>
+                </header>
     
-    <nav>
-        <ul>
-        <li class=”current”><a href=”#”>Home</a></li>
-        <li><a href=”#”>skin</a></li>
-        <li><a href=”#”>lip</a></li>
-        <li><a href=”#”>eye</a></li>
-        <li><a href=”#”>contact</a></li>
-        </ul>
-    </nav>
+    
+     <div class="menu">
+                    <div class="container">
+                    <div class="row">
+                        
+                        <div class="col-md-2 col-lg-2"><a href=”#”>Home</a></div>
+                        <div class="col-md-2 col-lg-2"><a href=”#”>Skin</a></div>
+                        <div class="col-md-2 col-lg-2"><a href=”#”>Lip</a></div>
+                        <div class="col-md-2 col-lg-2"><a href=”#”>Eye</a></div>
+                        <div class="col-md-2 col-lg-2"><a href=”#”>Contact</a></div>
+                        
+                    </div>
+                    </div>
+                    
 
-    <nav>
-        <ul>
-        <li class=”current”><a href=”#”><img src="https://miharu828.github.io/miharu/sydney-opera-house.png"></a></li>
-        <li><a href=”#”><img src="https://miharu828.github.io/miharu/makeup.png"></a></li>
-        <li><a href=”#”><img src="https://miharu828.github.io/miharu/lipstick.png"></a></li>
-        <li><a href=”#”><img src="https://miharu828.github.io/miharu/makeup (1).png"></a></li>
-        <li><a href=”#”><img src="https://miharu828.github.io/miharu/edit.png"></a></li>
-        </ul>
-    </nav>
 
+         <div class="container">
+         <div class="row">
+                            
+       <div class="col-md-2 col-lg-2"><a href=”#”><img src="https://miharu828.github.io/miharu/sydney-opera-house.png"></a></div>
+        <div class="col-md-2 col-lg-2"><a href=”#”><img src="https://miharu828.github.io/miharu/makeup.png"></a></div>
+        <div class="col-md-2 col-lg-2"><a href=”#”><a href=”#”><img src="https://miharu828.github.io/miharu/lipstick.png"></a></div>
+        <div class="col-md-2 col-lg-2"><a href=”#”><img src="https://miharu828.github.io/miharu/makeup (1).png"></a></div>
+       <div class="col-md-2 col-lg-2"><a href=”#”><img src="https://miharu828.github.io/miharu/edit.png"></a></div>
+            
+             </div>
+             </div>
+             </div>
+             </div>
+       
+   
+<div class="rank-block">   
+<div class="rank-visual1"> 
 <div class="rank">Weekly Ranking</div>
 <div class="lip-name">大英博物館クレオパトラ#301</div>
 <div class="rank-visual"><img src="https://miharu828.github.io/miharu/jean-philippe-delberghe-75xPHEQBmvA-unsplash.jpg"></div>
@@ -122,14 +170,6 @@
 <div class="footer">
     <img src="https://miharu828.github.io/miharu/footer.jpg">
 </div>
-
-
-
-
-
-
-
-
 
 
 
@@ -241,10 +281,38 @@
         $('#pagination-wrap ul li').removeClass('active');
         $('#pagination-wrap ul li:eq('+pos+')').addClass('active');
     }
-            
+
+
+
+(function($) {
+    $(function() {
+        var $header = $('#top-head');
+        // Nav Fixed
+        $(window).scroll(function() {
+            if ($(window).scrollTop() > 350) {
+                $header.addClass('fixed');
+            } else {
+                $header.removeClass('fixed');
+            }
+        });
+        // Nav Toggle Button
+        $('#nav-toggle').click(function(){
+            $header.toggleClass('open');
+        });
+    });
+})(jQuery);
+
       
          
            
     </script>
 </body>
 </html>
+
+
+
+
+
+
+
+
