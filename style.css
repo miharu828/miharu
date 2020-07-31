@@ -5,16 +5,13 @@ body{
 .main-visual{
   width:100vw;
 }
+
 .main-visual img{
 width:100%;
 position: relative;
 left:0;
 z-index:1
 }
-
-
-  
-
 
 .white-back{
 width:30%;
@@ -135,7 +132,7 @@ z-index: 2;
 
     .lip-name{
         position: absolute;
-        top:172%;
+        top:187%;
         left:21%;
         font-size:1.2em;
         color:black;
@@ -184,7 +181,7 @@ z-index: 2;
 
             .eye-name1{
                 position: absolute;
-                top:259%;
+                top:274%;
                 left:57%;
                 font-size:1.2em;
         color:black;
