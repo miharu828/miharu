@@ -156,29 +156,26 @@ z-index: 2;
         }
 
     .rank-visual2{
-        margin-left:14%;
+      
         margin-top:27%
     }
     .rank-visual2 img{
-        margin-left:24%;
         height:30%;
         width:31%;
-        margin-top:-2%;
+     margin-left:19%;
+    margin-top:-24%;
      
         }
 
         .rank-visual2 img:nth-child(2){
-            margin-left:20%;
-            margin-top:-13%;
+            margin-left:17%;
+            margin-top:-24%;
             height:30%;
             width:34%;
-            box-shadow:-35px 28px 0px -8px black;
+             box-shadow:-35px 28px 0px -8px rgb(255,255,255,0.5);
             }
         
-            .rank-visual2{
-                margin-left:4%;
-                margin-top:0
-            }
+
 
             .eye-name1{
                 position: absolute;
