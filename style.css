@@ -602,3 +602,53 @@ a:hover{color:#1bc1a3;}
   display: none;
 }
 
+
+.gallery-p {
+	overflow: hidden;
+  display: flex;
+  position: relative;
+  top:25vh;
+}
+
+.gallery {
+	display: flex;
+}
+
+.gallery img {
+	height: 200px; /* スライダーの高さ */
+	width: auto;
+}
+
+@keyframes gallery {
+	0% {
+		transform: translateX(100%);
+	}
+	100% {
+		transform: translateX(-100%);
+	}
+}
+
+@keyframes gallery2 {
+	0% {
+		transform: translateX(0%);
+	}
+	100% {
+		transform: translateX(-200%);
+	}
+}
+
+.gallery:first-child {
+	animation: gallery 60s -30s linear infinite; /* スライダーの速度（２番目の数字は１番目の数字の半分にします） */
+}
+
+.gallery:last-child {
+	animation: gallery2 60s linear infinite; /* 60sの部分は上の数字と同じ */
+}
+
+.product {
+  font-weight: bold;
+  text-align: center;
+  position: relative;
+  top: 14vh;
+  font-size: 3vw;
+}
