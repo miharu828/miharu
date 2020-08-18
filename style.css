@@ -650,9 +650,10 @@ a:hover{color:#1bc1a3;}
 }
 
 .product {
-  font-weight: bold;
-  text-align: center;
-  position: relative;
-  top: 14vh;
-  font-size: 3vw;
+    font-weight: bold;
+    text-align: center;
+    position: relative;
+    top: 14vh;
+    font-size: 2em;
+    margin-left: 4vw;
 }
